@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RoutingModule } from './routing.module';
-
+import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { HeroesComponent,SelectedHeroDialog } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,16 +21,19 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    SelectedHeroDialog
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    MaterialModule.forRoot(),
   ],
   providers: [HeroService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[SelectedHeroDialog]
 })
 export class AppModule { }
