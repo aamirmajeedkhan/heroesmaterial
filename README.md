@@ -1,6 +1,6 @@
 
 
-# Angular2 workshop
+# Heroes Example on Angular2 Material Component
 
 It's a material design followed from 
 https://medium.com/@jamzi
